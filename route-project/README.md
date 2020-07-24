@@ -8,6 +8,8 @@
    - BrowserRouter
    - Switch
    - Route
+   - Redirect
+   - withRouter()
    - NavLink
    - Link
 2. query-string
