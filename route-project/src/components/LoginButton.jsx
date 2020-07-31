@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { withRouter, Redirect } from 'react-router-dom'; // Higher Order Component
 
-function LoginButton({ history }) {
+function LoginButton(props) {
+  console.log(props);
   const [logState, setLogState] = useState(false);
 
   if (logState) {
@@ -20,7 +21,7 @@ function LoginButton({ history }) {
 
   function movePage() {
     setTimeout(() => {
-      history.push('/'); // js식 라우팅 이동
+      props.history.push('/'); // js식 라우팅 이동
     }, 1000);
   }
 }
