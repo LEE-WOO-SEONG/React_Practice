@@ -5,7 +5,7 @@ import { act } from 'react-dom/test-utils';
 
 jest.useFakeTimers();
 
-describe('Button 컴포넌트', () => {
+describe('Button 컴포넌트 (@testing-library/react)', () => {
   it('컴포넌트가 정상적으로 생성된다.', () => {
     render(<Button />);
   });
@@ -58,12 +58,14 @@ describe('Button 컴포넌트', () => {
     fireEvent.click(button);
 
     // 클릭 시, 버튼 비활성화
-    expect(button.disabled).toBeTruthy();
+    // expect(button.disabled).toBeTruthy();
+    expect(button).toBeDisabled();
 
     act(() => {
       jest.advanceTimersByTime(5000);
     });
 
-    expect(button.disabled).toBeFalsy();
+    // expect(button.disabled).toBeFalsy();
+    expect(button).not.toBeDisabled();
   });
 });
